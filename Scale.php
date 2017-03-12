@@ -72,7 +72,7 @@ class Scale {
 
     /**
      * @param null $number
-     * 
+     *
      * @return mixed
      */
     public function getNote($number = null) {
@@ -84,6 +84,8 @@ class Scale {
     }
 
     /**
+     * Gets all notes objects in Scale
+     *
      * @return array
      */
     public function getNotes() {
@@ -91,7 +93,9 @@ class Scale {
     }
 
     /**
+     * Gets all note names in Scale
      *
+     * @return array
      */
     public function getNoteNames() {
         $noteNames = [];
@@ -104,6 +108,8 @@ class Scale {
     }
 
     /**
+     * Assembles scale note objects based on scale formula
+     *
      * @return array
      */
     private function createScale() {
@@ -127,8 +133,11 @@ class Scale {
     }
 
     /**
-     * @param $index
-     * @return mixed
+     * Translates an index that goes outside of the scale: i.e converts note index 9 to 2
+     *
+     * @param integer $index Scale note number
+     *
+     * @return integer
      */
     private function translateIndex($index) {
         $noteCount = count($this->notes);

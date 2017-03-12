@@ -4,17 +4,22 @@ namespace App\Libraries;
 class NoteList {
 
     /**
-     * @param $noteName
-     * @return mixed
+     * Gets the index of a note in the note list given a name
+     *
+     * @param string $noteName Note name
+     *
+     * @return integer
      * 
      * @throws \Exception
      */
     public static function getIndex($noteName) {
         foreach (self::$notes as $key => $note) {
+            // attempt match by name
             if ($note['name'] === $noteName) {
                 return $key;
             }
 
+            // attempt match by 'accepts' array
             if (isset($note['accepts']) && in_array($noteName, $note['accepts'])) {
                 return $key;
             }
@@ -24,7 +29,10 @@ class NoteList {
     }
 
     /**
-     * @param $index
+     * Translates an index that is outside of the note list to an index that is
+     *
+     * @param integer $index Index in note list
+     *
      * @return mixed
      */
     public static function translateIndex($index) {
@@ -39,6 +47,8 @@ class NoteList {
     }
 
     /**
+     * Gets the note list
+     *
      * @return array
      */
     public static function getAll() {
@@ -46,7 +56,7 @@ class NoteList {
     }
 
     /**
-     * @return array
+     * @var array
      */
     public static $notes = [
         [

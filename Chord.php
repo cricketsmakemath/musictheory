@@ -1,10 +1,11 @@
 <?php
 namespace App\Libraries;
 
-use Mockery\Matcher\Not;
-
 class Chord {
 
+    /**
+     * Defaults
+     */
     const DEFAULT_ROOT = 'C';
 
     /**
@@ -96,8 +97,11 @@ class Chord {
     }
 
     /**
-     * @param $step
-     * @return int
+     * Calculates the note modifier by searching the formula step for 'b' or '#'
+     *
+     * @param string $step Formula step
+     *
+     * @return integer
      */
     private function calculateNoteModifier($step) {
         $modifier = 0;
