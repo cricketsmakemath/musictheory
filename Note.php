@@ -16,8 +16,8 @@ class Note {
      * @param $noteName
      */
     public function __construct($noteName) {
-        $this->name           = $noteName;
-        $this->noteListIndex  = NoteList::getIndex($this->name);
+        $this->noteListIndex  = NoteList::getIndex($noteName);
+        $this->name           = NoteList::$notes[$this->noteListIndex]['name'];
         $this->octaveZeroFreq = NoteList::$notes[$this->noteListIndex]['octaveZeroFreq'];
     }
 
@@ -46,6 +46,24 @@ class Note {
      */
     public function getOctaveZeroFreq() {
         return $this->octaveZeroFreq;
+    }
+
+    /**
+     * Flats a note
+     *
+     * @return Note
+     */
+    public function flat() {
+        return $this->modify(-1);
+    }
+
+    /**
+     * Sharps a note
+     *
+     * @return Note
+     */
+    public function sharp() {
+        return $this->modify(1);
     }
 
     /**
@@ -82,7 +100,7 @@ class Note {
         $halfStepsFromNote = $octave * 12;
         $frequency         = $baseFrequency * pow(pow(2, 1/12), $halfStepsFromNote);
         
-        return $frequency;
+        return round($frequency, 3);
     }
     
 }

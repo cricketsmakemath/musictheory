@@ -56,10 +56,46 @@ class Chord {
      * @param string $type     Chord type
      */
     public function __construct(Note $rootNote = null, $type = null) {
-        $this->root    = is_null($rootNote)? new Note(self::DEFAULT_ROOT) : $rootNote;
+        $this->root    = is_null($rootNote) ? new Note(self::DEFAULT_ROOT) : $rootNote;
         $this->type    = is_null($type) ? self::MAJOR : $type;
         $this->formula = self::FORMULAS[$this->type];
         $this->notes   = $this->createChord();
+    }
+
+    /**
+     * Gets root note object
+     *
+     * @return Note
+     */
+    public function getRoot() {
+        return $this->root;
+    }
+
+    /**
+     * Gets chord type
+     *
+     * @return string
+     */
+    public function getType() {
+        return $this->type;
+    }
+
+    /**
+     * Gets chord formula
+     *
+     * @return mixed
+     */
+    public function getFormula() {
+        return $this->formula;
+    }
+
+    /**
+     * Gets chord note objects
+     *
+     * @return array
+     */
+    public function getNotes() {
+        return $this->notes;
     }
 
     /**

@@ -31,7 +31,7 @@ class Scale {
     const HALF_WHOLE_DIM   = 'Half-Whole Diminished';
 
     /**
-     * Scale step formulas
+     * Scale step formulas: 2 = Whole Step, 1 = Half Step
      */
     const FORMULAS = [
         self::MAJOR            => [2, 2, 1, 2, 2, 2],
@@ -73,14 +73,41 @@ class Scale {
     /**
      * @param null $number
      *
-     * @return mixed
+     * @return Note
      */
-    public function getNote($number = null) {
+    public function getNote($number) {
         if (!isset($this->notes[$number])) {
             $number = $this->translateIndex($number);
         }
 
         return $this->notes[$number];
+    }
+
+    /**
+     * Gets scale root note object
+     *
+     * @return Note
+     */
+    public function getRoot() {
+        return $this->root;
+    }
+
+    /**
+     * Gets the scale type
+     *
+     * @return string
+     */
+    public function getType() {
+        return $this->type;
+    }
+
+    /**
+     * Gets the scale formula
+     *
+     * @return array
+     */
+    public function getFormula() {
+        return $this->formula;
     }
 
     /**
