@@ -11,19 +11,19 @@ class Chord {
     /**
      * Supported chord types
      */
-    const MAJOR = 'maj';
-    const MINOR = 'm';
-    const SIX   = 6;
-    const SIX_NINE = '6/9';
-    const MAJOR_SEVEN = 'maj7';
-    const MAJOR_NINE = 'maj9';
-    const MINOR_SIX = 'm6';
-    const MINOR_SEVEN = 'm7';
-    const MINOR_NINE = 'm9';
-    const DOMINANT_SEVENTH = '7';
-    const DOMINANT_NINTH = '9';
+    const MAJOR               = 'maj';
+    const MINOR               = 'm';
+    const SIX                 = 6;
+    const SIX_NINE            = '6/9';
+    const MAJOR_SEVEN         = 'maj7';
+    const MAJOR_NINE          = 'maj9';
+    const MINOR_SIX           = 'm6';
+    const MINOR_SEVEN         = 'm7';
+    const MINOR_NINE          = 'm9';
+    const DOMINANT_SEVENTH    = '7';
+    const DOMINANT_NINTH      = '9';
     const DOMINANT_THIRTEENTH = '13';
-    const DIMINISHED = 'dim';
+    const DIMINISHED          = 'dim';
 
     /**
      * Chord formulas
