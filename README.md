@@ -8,7 +8,7 @@ $c = new Note('C');
 To create a scale, pass a Note object (the root note) and the scale type to a new Scale object
 ```php
 $cMajorScale = new Scale($c, Scale::MAJOR)
-``
+```
 
 To create a chord, pass a Note object (the root note) and the chord type to a new Chord object
 ```php
